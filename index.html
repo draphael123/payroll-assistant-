@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payroll Variance & Processing â Fountain Vitality</title>
+  <title>Payroll Variance &amp; Processing &mdash; Fountain Vitality</title>
   <style>
     :root {
       --teal: #0D9488;
@@ -30,7 +30,7 @@
       background: var(--slate-50);
     }
 
-    /* ââ Hero ââ */
+    /* -- Hero -- */
     .hero {
       background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
       color: var(--white);
@@ -61,10 +61,10 @@
       opacity: 0.9;
     }
 
-    /* ââ Container ââ */
+    /* -- Container -- */
     .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* ââ Section ââ */
+    /* -- Section -- */
     section { padding: 3rem 0; }
     section + section { border-top: 1px solid var(--slate-200); }
     .section-label {
@@ -86,7 +86,7 @@
       max-width: 640px;
     }
 
-    /* ââ Systems Grid ââ */
+    /* -- Systems Grid -- */
     .systems-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -112,7 +112,7 @@
     .icon-tp   { background: #FEF3C7; }
     .icon-vt   { background: #EDE9FE; }
 
-    /* ââ Timeline ââ */
+    /* -- Timeline -- */
     .timeline { position: relative; padding-left: 2.5rem; }
     .timeline::before {
       content: '';
@@ -146,7 +146,7 @@
     .tl-item h3 { font-size: 1rem; color: var(--slate-900); margin-bottom: 0.25rem; }
     .tl-item p  { font-size: 0.88rem; color: var(--slate-500); }
 
-    /* ââ Checklist Cards ââ */
+    /* -- Checklist Cards -- */
     .checklist-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -187,7 +187,7 @@
       border-radius: 3px;
     }
 
-    /* ââ Escalation ââ */
+    /* -- Escalation -- */
     .esc-table {
       width: 100%;
       border-collapse: collapse;
@@ -212,7 +212,7 @@
     }
     .esc-table tr:last-child td { border-bottom: none; }
 
-    /* ââ Callout ââ */
+    /* -- Callout -- */
     .callout {
       display: flex;
       gap: 0.75rem;
@@ -225,7 +225,7 @@
     .callout-red   { background: var(--red-light); border: 1px solid #FECACA; }
     .callout-icon  { flex-shrink: 0; font-size: 1.1rem; }
 
-    /* ââ Slack Templates ââ */
+    /* -- Slack Templates -- */
     .slack-tpl {
       background: var(--white);
       border: 1px solid var(--slate-200);
@@ -248,7 +248,7 @@
       margin-bottom: 0.35rem;
     }
 
-    /* ââ Setup Requirements ââ */
+    /* -- Setup Requirements -- */
     .setup-grid {
       display: flex;
       flex-direction: column;
@@ -313,7 +313,7 @@
       border-radius: 3px;
     }
 
-    /* ââ Footer ââ */
+    /* -- Footer -- */
     footer {
       text-align: center;
       padding: 2rem;
@@ -326,37 +326,93 @@
 </head>
 <body>
 
-  <!-- âââ HERO âââ -->
+  <!-- === HERO === -->
   <div class="hero">
     <div class="hero-badge">Standard Operating Procedure</div>
     <h1>Payroll Variance &amp; Processing</h1>
-    <p>End-to-end workflow for payroll variance review and processing at Fountain Vitality. No APIs required â exports, copy-paste, and structured tracking.</p>
+    <p>End-to-end workflow for payroll variance review and processing at Fountain Vitality. No APIs required &mdash; exports, copy-paste, and structured tracking.</p>
   </div>
 
-  <!-- âââ SYSTEMS âââ -->
+  <!-- === SETUP REQUIREMENTS === -->
+  <section>
+    <div class="container">
+      <div class="section-label">Action Required</div>
+      <h2>What's Needed to Go Live</h2>
+      <p>Four items are required before the automated payroll workflow is fully operational. Provide these to Claude to complete setup.</p>
+
+      <div class="setup-grid">
+        <div class="setup-card setup-urgent">
+          <div class="setup-number">1</div>
+          <div class="setup-content">
+            <div class="setup-status status-blocking">Blocking</div>
+            <h3>Payroll Processing Day</h3>
+            <p>Which day of the week does payroll run? This determines when the 48-hour pre-check calendar reminder fires, when the shift diff capture deadline falls, and when DST alerts trigger. Everything else is built &mdash; this is the missing piece.</p>
+            <div class="setup-action">Tell Claude: <em>"We process payroll on [day]"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-ready">
+          <div class="setup-number">2</div>
+          <div class="setup-content">
+            <div class="setup-status status-ready">Ready to Build</div>
+            <h3>Notion Payroll Checklist</h3>
+            <p>A structured database with 20 properties covering every checklist item from the SOP &mdash; tabs open, variance scan complete, approvals received, Gusto corrections entered, Lindsay meeting prep done. Schema is designed and ready to deploy.</p>
+            <div class="setup-action">Tell Claude: <em>"Create the Notion checklist"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-waiting">
+          <div class="setup-number">3</div>
+          <div class="setup-content">
+            <div class="setup-status status-waiting">Needs Channel</div>
+            <h3>Slack #payroll-updates Channel</h3>
+            <p>The SOP references a <code>#payroll-updates</code> Slack channel for variance flags, finance notifications, and morning summaries. This channel doesn't appear to exist yet. Once created, Claude will post and pin the three standardized message templates.</p>
+            <div class="setup-action">Create <code>#payroll-updates</code> in Slack, then tell Claude: <em>"Pin the Slack templates"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-ready">
+          <div class="setup-number">4</div>
+          <div class="setup-content">
+            <div class="setup-status status-ready">Ready to Test</div>
+            <h3>First Variance Scan &mdash; Test Run</h3>
+            <p>To validate the automated variance scan, Claude needs two CSV exports from one pay period: a Gusto timesheet export and a time punch report. Claude will cross-reference them provider by provider, flag mismatches, and populate the Variance Tracker automatically.</p>
+            <div class="setup-action">Export both CSVs and upload them: <em>"Here are the Gusto and time punch exports for [dates]"</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-amber" style="margin-top: 1.5rem;">
+        <div class="callout-icon">&#128640;</div>
+        <div><strong>Once all four are complete:</strong> Claude will run the full payroll variance workflow &mdash; calendar reminders fire automatically, the Notion checklist tracks each pay period, Slack templates are pinned and ready, and variance scans run on demand from CSV uploads.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === SYSTEMS === -->
   <section>
     <div class="container">
       <div class="section-label">Infrastructure</div>
       <h2>Systems Involved</h2>
-      <p>Four systems are reconciled each pay period. All use manual exports â no API access needed.</p>
+      <p>Four systems are reconciled each pay period. All use manual exports &mdash; no API access needed.</p>
       <div class="systems-grid">
         <div class="system-card">
-          <div class="icon icon-cal">ð</div>
+          <div class="icon icon-cal">&#128197;</div>
           <h3>Google Calendar</h3>
           <p>Scheduled shifts assigned by the ops/scheduling team. Export as CSV or screenshot per period.</p>
         </div>
         <div class="system-card">
-          <div class="icon icon-gus">ð°</div>
+          <div class="icon icon-gus">&#128176;</div>
           <h3>Gusto</h3>
           <p>Official payroll schedule and time punches. Export from Admin &gt; Time Tracking.</p>
         </div>
         <div class="system-card">
-          <div class="icon icon-tp">â±</div>
+          <div class="icon icon-tp">&#9201;</div>
           <h3>Time Punch System</h3>
           <p>Actual clock-in/out times and breaks. Export CSV from the admin portal.</p>
         </div>
         <div class="system-card">
-          <div class="icon icon-vt">ð</div>
+          <div class="icon icon-vt">&#128202;</div>
           <h3>Variance Tracker</h3>
           <p>Google Sheet tracking all changes, approvals, and pay impact. Maintained manually throughout the period.</p>
         </div>
@@ -364,41 +420,41 @@
     </div>
   </section>
 
-  <!-- âââ WORKFLOW TIMELINE âââ -->
+  <!-- === WORKFLOW TIMELINE === -->
   <section>
     <div class="container">
       <div class="section-label">Workflow</div>
       <h2>How It Works</h2>
-      <p>The payroll cycle runs in three phases â ongoing tracking, a 48-hour pre-check, and the processing morning.</p>
+      <p>The payroll cycle runs in three phases &mdash; ongoing tracking, a 48-hour pre-check, and the processing morning.</p>
       <div class="timeline">
         <div class="tl-item active">
           <div class="tl-dot"></div>
-          <div class="tl-phase">Part 1 â Throughout the Pay Period</div>
+          <div class="tl-phase">Part 1 &mdash; Throughout the Pay Period</div>
           <h3>Variance Tracker Setup &amp; Ongoing Logging</h3>
           <p>At the start of each period, prepare the Variance Tracker sheet. Log licensing reimbursements as they occur. Record shift differentials. Notify Finance immediately on new hires, terminations, rate changes, or status changes.</p>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <div class="tl-phase">Part 2 â 48 Hours Before Processing</div>
+          <div class="tl-phase">Part 2 &mdash; 48 Hours Before Processing</div>
           <h3>Pre-Payroll Checklist</h3>
           <p>Export Gusto timesheets, time punch reports, and Google Calendar shifts. Final capture of shift diffs and reimbursements. Confirm Finance has been notified on all changes. Run DST check if the period crosses a transition date.</p>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <div class="tl-phase">Part 3 â Payroll Processing Morning</div>
-          <h3>Variance Scan â Approval â Correction</h3>
+          <div class="tl-phase">Part 3 &mdash; Payroll Processing Morning</div>
+          <h3>Variance Scan &rarr; Approval &rarr; Correction</h3>
           <p>Open all systems side-by-side. Compare Calendar vs. Gusto vs. punches for each provider. Flag mismatches in the tracker. Send flags to Ashley/Brittany for approval. Get provider confirmations. Make approved corrections in Gusto. Prep summary for Lindsay meeting by 8:00 AM EST.</p>
         </div>
       </div>
 
       <div class="callout callout-amber">
-        <div class="callout-icon">â ï¸</div>
+        <div class="callout-icon">&#9888;</div>
         <div><strong>Key rule:</strong> Flag first, confirm second, change third. No Gusto edits until Ashley or Brittany approve.</div>
       </div>
     </div>
   </section>
 
-  <!-- âââ MORNING CHECKLIST âââ -->
+  <!-- === MORNING CHECKLIST === -->
   <section>
     <div class="container">
       <div class="section-label">Quick Reference</div>
@@ -409,7 +465,7 @@
           <h3>Setup &amp; Scan</h3>
           <ul>
             <li>Tabs open: Gusto, Calendar, Time Punches, Tracker, Slack</li>
-            <li>Variance scan complete â all providers reviewed</li>
+            <li>Variance scan complete &mdash; all providers reviewed</li>
             <li>All gaps flagged in tracker</li>
             <li>DST check done (if applicable)</li>
           </ul>
@@ -417,7 +473,7 @@
         <div class="cl-card">
           <h3>Approvals &amp; Corrections</h3>
           <ul>
-            <li>Ashley / Brittany notified â approvals received</li>
+            <li>Ashley / Brittany notified &mdash; approvals received</li>
             <li>Provider confirmations sent and responses logged</li>
             <li>Gusto corrections entered and verified</li>
           </ul>
@@ -442,7 +498,7 @@
     </div>
   </section>
 
-  <!-- âââ DST âââ -->
+  <!-- === DST === -->
   <section>
     <div class="container">
       <div class="section-label">Special Handling</div>
@@ -466,13 +522,13 @@
         </div>
       </div>
       <div class="callout callout-red">
-        <div class="callout-icon">ðµ</div>
-        <div><strong>Arizona exception:</strong> AZ does not observe DST. Providers there are permanently on MST (UTC-7). During DST months (MarâNov), AZ is 1 hour behind MT states like Colorado and Montana.</div>
+        <div class="callout-icon">&#127797;</div>
+        <div><strong>Arizona exception:</strong> AZ does not observe DST. Providers there are permanently on MST (UTC-7). During DST months (Mar&ndash;Nov), AZ is 1 hour behind MT states like Colorado and Montana.</div>
       </div>
     </div>
   </section>
 
-  <!-- âââ ESCALATION âââ -->
+  <!-- === ESCALATION === -->
   <section>
     <div class="container">
       <div class="section-label">Escalation</div>
@@ -483,16 +539,16 @@
           <tr><th>Situation</th><th>Contact</th><th>Channel</th></tr>
         </thead>
         <tbody>
-          <tr><td>Provider not responding before 8 AM</td><td>Ashley G / Brittany T</td><td>Slack DM â note urgency</td></tr>
+          <tr><td>Provider not responding before 8 AM</td><td>Ashley G / Brittany T</td><td>Slack DM &mdash; note urgency</td></tr>
           <tr><td>Variance unresolved before Lindsay meeting</td><td>Lindsay</td><td>Flag in meeting with documentation</td></tr>
           <tr><td>System discrepancy with no clear fix</td><td>Lindsay + Finance</td><td>Slack + written summary in tracker</td></tr>
-          <tr><td>Gusto shows incorrect rate for processed period</td><td>Finance + Gusto Admin</td><td>Urgent â flag before payroll is submitted</td></tr>
+          <tr><td>Gusto shows incorrect rate for processed period</td><td>Finance + Gusto Admin</td><td>Urgent &mdash; flag before payroll is submitted</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- âââ SLACK TEMPLATES âââ -->
+  <!-- === SLACK TEMPLATES === -->
   <section>
     <div class="container">
       <div class="section-label">Templates</div>
@@ -500,81 +556,25 @@
       <p>Standardized messages for #payroll-updates. Copy-paste and fill in the brackets.</p>
 
       <div class="slack-tpl">
-        <div class="slack-tpl-label">Variance Flag â Ashley / Brittany</div>
-        [VARIANCE FLAG] â [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.
+        <div class="slack-tpl-label">Variance Flag &rarr; Ashley / Brittany</div>
+        [VARIANCE FLAG] &mdash; [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.
       </div>
 
       <div class="slack-tpl">
         <div class="slack-tpl-label">Finance Notification</div>
-        [ACTION: NEW HIRE / TERMINATION / RATE CHANGE] â [Provider Name] â Effective [Date] â [Details]. Please confirm receipt.
+        [ACTION: NEW HIRE / TERMINATION / RATE CHANGE] &mdash; [Provider Name] &mdash; Effective [Date] &mdash; [Details]. Please confirm receipt.
       </div>
 
       <div class="slack-tpl">
-        <div class="slack-tpl-label">Payroll Morning Summary â Lindsay</div>
+        <div class="slack-tpl-label">Payroll Morning Summary &rarr; Lindsay</div>
         [PAYROLL SUMMARY] Pay period: [dates]. Variances found: [N]. Resolved: [N]. Outstanding: [N]. Reimbursements: [$]. Shift diffs captured: [Y/N].
       </div>
     </div>
   </section>
 
-  <!-- âââ SETUP REQUIREMENTS âââ -->
-  <section>
-    <div class="container">
-      <div class="section-label">Action Required</div>
-      <h2>What's Needed to Go Live</h2>
-      <p>Four items are required before the automated payroll workflow is fully operational. Provide these to Claude to complete setup.</p>
-
-      <div class="setup-grid">
-        <div class="setup-card setup-urgent">
-          <div class="setup-number">1</div>
-          <div class="setup-content">
-            <div class="setup-status status-blocking">Blocking</div>
-            <h3>Payroll Processing Day</h3>
-            <p>Which day of the week does payroll run? This determines when the 48-hour pre-check calendar reminder fires, when the shift diff capture deadline falls, and when DST alerts trigger. Everything else is built â this is the missing piece.</p>
-            <div class="setup-action">Tell Claude: <em>"We process payroll on [day]"</em></div>
-          </div>
-        </div>
-
-        <div class="setup-card setup-ready">
-          <div class="setup-number">2</div>
-          <div class="setup-content">
-            <div class="setup-status status-ready">Ready to Build</div>
-            <h3>Notion Payroll Checklist</h3>
-            <p>A structured database with 20 properties covering every checklist item from the SOP â tabs open, variance scan complete, approvals received, Gusto corrections entered, Lindsay meeting prep done. Schema is designed and ready to deploy.</p>
-            <div class="setup-action">Tell Claude: <em>"Create the Notion checklist"</em></div>
-          </div>
-        </div>
-
-        <div class="setup-card setup-waiting">
-          <div class="setup-number">3</div>
-          <div class="setup-content">
-            <div class="setup-status status-waiting">Needs Channel</div>
-            <h3>Slack #payroll-updates Channel</h3>
-            <p>The SOP references a <code>#payroll-updates</code> Slack channel for variance flags, finance notifications, and morning summaries. This channel doesn't appear to exist yet. Once created, Claude will post and pin the three standardized message templates.</p>
-            <div class="setup-action">Create <code>#payroll-updates</code> in Slack, then tell Claude: <em>"Pin the Slack templates"</em></div>
-          </div>
-        </div>
-
-        <div class="setup-card setup-ready">
-          <div class="setup-number">4</div>
-          <div class="setup-content">
-            <div class="setup-status status-ready">Ready to Test</div>
-            <h3>First Variance Scan â Test Run</h3>
-            <p>To validate the automated variance scan, Claude needs two CSV exports from one pay period: a Gusto timesheet export and a time punch report. Claude will cross-reference them provider by provider, flag mismatches, and populate the Variance Tracker automatically.</p>
-            <div class="setup-action">Export both CSVs and upload them: <em>"Here are the Gusto and time punch exports for [dates]"</em></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout callout-amber" style="margin-top: 1.5rem;">
-        <div class="callout-icon">ð</div>
-        <div><strong>Once all four are complete:</strong> Claude will run the full payroll variance workflow â calendar reminders fire automatically, the Notion checklist tracks each pay period, Slack templates are pinned and ready, and variance scans run on demand from CSV uploads.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- âââ FOOTER âââ -->
+  <!-- === FOOTER === -->
   <footer>
-    <strong>Fountain Vitality</strong> Â· Payroll Variance &amp; Processing SOP Â· v1.0 Â· March 2026<br>
+    <strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v1.0 &middot; March 2026<br>
     Owner: Daniel Raphael, Clinical Operations
   </footer>
 
