@@ -3,19 +3,580 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payroll Variance &amp; Processing - Fountain Vitality</title>
+  <title>Payroll Variance & Processing â Fountain Vitality</title>
   <style>
-    :root{--teal:#0D9488;--teal-light:#CCFBF1;--teal-dark:#115E59;--slate-900:#0F172A;--slate-700:#334155;--slate-500:#64748B;--slate-200:#E2E8F0;--slate-50:#F8FAFC;--white:#FFF;--amber:#F59E0B;--amber-light:#FEF3C7;--red-light:#FEE2E2;--red:#EF4444}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--slate-700);line-height:1.6;background:var(--slate-50)}.hero{background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 100%);color:var(--white);padding:4rem 2rem 3.5rem;text-align:center}.hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:.25rem 1rem;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.25rem}.hero h1{font-size:2.5rem;font-weight:700;margin-bottom:.75rem;letter-spacing:-.02em}.hero p{max-width:600px;margin:0 auto;font-size:1.1rem;opacity:.9}.container{max-width:960px;margin:0 auto;padding:0 1.5rem}section{padding:3rem 0}section+section{border-top:1px solid var(--slate-200)}.section-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:.5rem}section h2{font-size:1.6rem;color:var(--slate-900);margin-bottom:.5rem}section>.container>p{color:var(--slate-500);margin-bottom:2rem;max-width:640px}.systems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}.system-card{background:var(--white);border:1px solid var(--slate-200);border-radius:10px;padding:1.25rem}.system-card .icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.75rem}.system-card h3{font-size:.95rem;color:var(--slate-900);margin-bottom:.25rem}.system-card p{font-size:.82rem;color:var(--slate-500);line-height:1.5}.icon-cal{background:#DBEAFE}.icon-gus{background:var(--teal-light)}.icon-tp{background:#FEF3C7}.icon-vt{background:#EDE9FE}.timeline{position:relative;padding-left:2.5rem}.timeline::before{content:'';position:absolute;left:.75rem;top:.5rem;bottom:.5rem;width:2px;background:var(--slate-200)}.tl-item{position:relative;margin-bottom:2rem}.tl-item:last-child{margin-bottom:0}.tl-dot{position:absolute;left:-1.95rem;top:.35rem;width:12px;height:12px;border-radius:50%;border:2px solid var(--teal);background:var(--white)}.tl-item.active .tl-dot{background:var(--teal)}.tl-phase{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);margin-bottom:.15rem}.tl-item h3{font-size:1rem;color:var(--slate-900);margin-bottom:.25rem}.tl-item p{font-size:.88rem;color:var(--slate-500)}.checklist-columns{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}@media(max-width:640px){.checklist-columns{grid-template-columns:1fr}}.cl-card{background:var(--white);border:1px solid var(--slate-200);border-radius:10px;padding:1.25rem}.cl-card h3{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--slate-900);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--slate-200)}.cl-card ul{list-style:none}.cl-card li{font-size:.85rem;color:var(--slate-700);padding:.3rem 0;padding-left:1.5rem;position:relative}.cl-card li::before{content:'';position:absolute;left:0;top:.55rem;width:14px;height:14px;border:1.5px solid var(--slate-200);border-radius:3px}.esc-table{width:100%;border-collapse:collapse;font-size:.85rem;background:var(--white);border-radius:10px;overflow:hidden;border:1px solid var(--slate-200)}.esc-table th{text-align:left;background:var(--slate-50);padding:.75rem 1rem;font-weight:600;color:var(--slate-900);border-bottom:1px solid var(--slate-200)}.esc-table td{padding:.65rem 1rem;border-bottom:1px solid var(--slate-200);color:var(--slate-700)}.esc-table tr:last-child td{border-bottom:none}.callout{display:flex;gap:.75rem;border-radius:10px;padding:1rem 1.25rem;font-size:.88rem;margin-top:1.5rem}.callout-amber{background:var(--amber-light);border:1px solid #FDE68A}.callout-red{background:var(--red-light);border:1px solid #FECACA}.callout-icon{flex-shrink:0;font-size:1.1rem}.slack-tpl{background:var(--white);border:1px solid var(--slate-200);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;font-family:'Courier New',monospace;font-size:.82rem;color:var(--slate-700);line-height:1.7;border-left:3px solid var(--teal)}.slack-tpl-label{font-family:'Segoe UI',system-ui,sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);margin-bottom:.35rem}footer{text-align:center;padding:2rem;font-size:.78rem;color:var(--slate-500);border-top:1px solid var(--slate-200)}footer strong{color:var(--slate-900)}
+    :root {
+      --teal: #0D9488;
+      --teal-light: #CCFBF1;
+      --teal-dark: #115E59;
+      --slate-900: #0F172A;
+      --slate-700: #334155;
+      --slate-500: #64748B;
+      --slate-200: #E2E8F0;
+      --slate-50: #F8FAFC;
+      --white: #FFFFFF;
+      --amber: #F59E0B;
+      --amber-light: #FEF3C7;
+      --red-light: #FEE2E2;
+      --red: #EF4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--slate-700);
+      line-height: 1.6;
+      background: var(--slate-50);
+    }
+
+    /* ââ Hero ââ */
+    .hero {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+      color: var(--white);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* ââ Container ââ */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ââ Section ââ */
+    section { padding: 3rem 0; }
+    section + section { border-top: 1px solid var(--slate-200); }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    section h2 {
+      font-size: 1.6rem;
+      color: var(--slate-900);
+      margin-bottom: 0.5rem;
+    }
+    section > .container > p {
+      color: var(--slate-500);
+      margin-bottom: 2rem;
+      max-width: 640px;
+    }
+
+    /* ââ Systems Grid ââ */
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .system-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .system-card .icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .system-card h3 { font-size: 0.95rem; color: var(--slate-900); margin-bottom: 0.25rem; }
+    .system-card p  { font-size: 0.82rem; color: var(--slate-500); line-height: 1.5; }
+    .icon-cal  { background: #DBEAFE; }
+    .icon-gus  { background: var(--teal-light); }
+    .icon-tp   { background: #FEF3C7; }
+    .icon-vt   { background: #EDE9FE; }
+
+    /* ââ Timeline ââ */
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.75rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--slate-200);
+    }
+    .tl-item { position: relative; margin-bottom: 2rem; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -1.95rem;
+      top: 0.35rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--teal);
+      background: var(--white);
+    }
+    .tl-item.active .tl-dot { background: var(--teal); }
+    .tl-phase {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal);
+      margin-bottom: 0.15rem;
+    }
+    .tl-item h3 { font-size: 1rem; color: var(--slate-900); margin-bottom: 0.25rem; }
+    .tl-item p  { font-size: 0.88rem; color: var(--slate-500); }
+
+    /* ââ Checklist Cards ââ */
+    .checklist-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 640px) { .checklist-columns { grid-template-columns: 1fr; } }
+    .cl-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .cl-card h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--slate-900);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .cl-card ul { list-style: none; }
+    .cl-card li {
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      padding: 0.3rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .cl-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 14px; height: 14px;
+      border: 1.5px solid var(--slate-200);
+      border-radius: 3px;
+    }
+
+    /* ââ Escalation ââ */
+    .esc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+    }
+    .esc-table th {
+      text-align: left;
+      background: var(--slate-50);
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .esc-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--slate-200);
+      color: var(--slate-700);
+    }
+    .esc-table tr:last-child td { border-bottom: none; }
+
+    /* ââ Callout ââ */
+    .callout {
+      display: flex;
+      gap: 0.75rem;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      margin-top: 1.5rem;
+    }
+    .callout-amber { background: var(--amber-light); border: 1px solid #FDE68A; }
+    .callout-red   { background: var(--red-light); border: 1px solid #FECACA; }
+    .callout-icon  { flex-shrink: 0; font-size: 1.1rem; }
+
+    /* ââ Slack Templates ââ */
+    .slack-tpl {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: var(--slate-700);
+      line-height: 1.7;
+      border-left: 3px solid var(--teal);
+    }
+    .slack-tpl-label {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ââ Setup Requirements ââ */
+    .setup-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .setup-card {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .setup-number {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--slate-500);
+    }
+    .setup-urgent .setup-number { background: var(--red); }
+    .setup-ready .setup-number { background: var(--teal); }
+    .setup-waiting .setup-number { background: var(--amber); }
+    .setup-content { flex: 1; }
+    .setup-content h3 { font-size: 1rem; color: var(--slate-900); margin-bottom: 0.25rem; }
+    .setup-content p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.6; margin-bottom: 0.5rem; }
+    .setup-status {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.35rem;
+    }
+    .status-blocking { background: var(--red-light); color: var(--red); }
+    .status-ready { background: var(--teal-light); color: var(--teal-dark); }
+    .status-waiting { background: var(--amber-light); color: #92400E; }
+    .setup-action {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .setup-action em {
+      color: var(--teal-dark);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .setup-action code {
+      font-size: 0.78rem;
+      background: var(--slate-200);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+
+    /* ââ Footer ââ */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      border-top: 1px solid var(--slate-200);
+    }
+    footer strong { color: var(--slate-900); }
   </style>
 </head>
 <body>
-  <div class="hero"><div class="hero-badge">Standard Operating Procedure</div><h1>Payroll Variance &amp; Processing</h1><p>End-to-end workflow for payroll variance review and processing at Fountain Vitality. No APIs required - exports, copy-paste, and structured tracking.</p></div>
-  <section><div class="container"><div class="section-label">Infrastructure</div><h2>Systems Involved</h2><p>Four systems are reconciled each pay period. All use manual exports - no API access needed.</p><div class="systems-grid"><div class="system-card"><div class="icon icon-cal">&#x1F4C5;</div><h3>Google Calendar</h3><p>Scheduled shifts assigned by the ops/scheduling team. Export as CSV or screenshot per period.</p></div><div class="system-card"><div class="icon icon-gus">&#x1F4B0;</div><h3>Gusto</h3><p>Official payroll schedule and time punches. Export from Admin &gt; Time Tracking.</p></div><div class="system-card"><div class="icon icon-tp">&#x23F1;</div><h3>Time Punch System</h3><p>Actual clock-in/out times and breaks. Export CSV from the admin portal.</p></div><div class="system-card"><div class="icon icon-vt">&#x1F4CA;</div><h3>Variance Tracker</h3><p>Google Sheet tracking all changes, approvals, and pay impact. Maintained manually throughout the period.</p></div></div></div></section>
-  <section><div class="container"><div class="section-label">Workflow</div><h2>How It Works</h2><p>The payroll cycle runs in three phases - ongoing tracking, a 48-hour pre-check, and the processing morning.</p><div class="timeline"><div class="tl-item active"><div class="tl-dot"></div><div class="tl-phase">Part 1 - Throughout the Pay Period</div><h3>Variance Tracker Setup &amp; Ongoing Logging</h3><p>At the start of each period, prepare the Variance Tracker sheet. Log licensing reimbursements as they occur. Record shift differentials. Notify Finance immediately on new hires, terminations, rate changes, or status changes.</p></div><div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Part 2 - 48 Hours Before Processing</div><h3>Pre-Payroll Checklist</h3><p>Export Gusto timesheets, time punch reports, and Google Calendar shifts. Final capture of shift diffs and reimbursements. Confirm Finance has been notified on all changes. Run DST check if the period crosses a transition date.</p></div><div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Part 3 - Payroll Processing Morning</div><h3>Variance Scan &rarr; Approval &rarr; Correction</h3><p>Open all systems side-by-side. Compare Calendar vs. Gusto vs. punches for each provider. Flag mismatches in the tracker. Send flags to Ashley/Brittany for approval. Get provider confirmations. Make approved corrections in Gusto. Prep summary for Lindsay meeting by 8:00 AM EST.</p></div></div><div class="callout callout-amber"><div class="callout-icon">&#x26A0;&#xFE0F;</div><div><strong>Key rule:</strong> Flag first, confirm second, change third. No Gusto edits until Ashley or Brittany approve.</div></div></div></section>
-  <section><div class="container"><div class="section-label">Quick Reference</div><h2>Payroll Morning Checklist</h2><p>Target: all items complete by 8:00 AM EST before the Lindsay meeting.</p><div class="checklist-columns"><div class="cl-card"><h3>Setup &amp; Scan</h3><ul><li>Tabs open: Gusto, Calendar, Time Punches, Tracker, Slack</li><li>Variance scan complete - all providers reviewed</li><li>All gaps flagged in tracker</li><li>DST check done (if applicable)</li></ul></div><div class="cl-card"><h3>Approvals &amp; Corrections</h3><ul><li>Ashley / Brittany notified - approvals received</li><li>Provider confirmations sent and responses logged</li><li>Gusto corrections entered and verified</li></ul></div><div class="cl-card"><h3>Financials</h3><ul><li>Reimbursements finalized in tracker + Gusto</li><li>Shift diffs captured for all qualifying shifts</li><li>Finance notified on hires, terms, rate changes</li></ul></div><div class="cl-card"><h3>Lindsay Meeting Prep</h3><ul><li>Tracker filtered to current pay period</li><li>Summary prepared: variances found / resolved / outstanding</li><li>Gusto Admin open for live review</li></ul></div></div></div></section>
-  <section><div class="container"><div class="section-label">Special Handling</div><h2>DST &amp; Timezone Rules</h2><p>Daylight saving transitions cause a 1-hour discrepancy for MT/MST providers. Check every period that crosses a transition date.</p><div class="timeline"><div class="tl-item"><div class="tl-dot"></div><h3>Identify the transition date</h3><p>Second Sunday in March (spring forward) or first Sunday in November (fall back).</p></div><div class="tl-item"><div class="tl-dot"></div><h3>Review affected providers</h3><p>Note which shifts fell before vs. after the transition. Compare Gusto timezone vs. time punch timezone.</p></div><div class="tl-item"><div class="tl-dot"></div><h3>Confirm &amp; adjust</h3><p>If a 1-hour gap appears around 2:00 AM on transition day, confirm with the provider and adjust Gusto to reflect actual hours worked.</p></div></div><div class="callout callout-red"><div class="callout-icon">&#x1F335;</div><div><strong>Arizona exception:</strong> AZ does not observe DST. Providers there are permanently on MST (UTC-7). During DST months (Mar-Nov), AZ is 1 hour behind MT states like Colorado and Montana.</div></div></div></section>
-  <section><div class="container"><div class="section-label">Escalation</div><h2>Escalation Path</h2><p>When standard resolution is not possible, follow this escalation ladder.</p><table class="esc-table"><thead><tr><th>Situation</th><th>Contact</th><th>Channel</th></tr></thead><tbody><tr><td>Provider not responding before 8 AM</td><td>Ashley G / Brittany T</td><td>Slack DM - note urgency</td></tr><tr><td>Variance unresolved before Lindsay meeting</td><td>Lindsay</td><td>Flag in meeting with documentation</td></tr><tr><td>System discrepancy with no clear fix</td><td>Lindsay + Finance</td><td>Slack + written summary in tracker</td></tr><tr><td>Gusto shows incorrect rate for processed period</td><td>Finance + Gusto Admin</td><td>Urgent - flag before payroll is submitted</td></tr></tbody></table></div></section>
-  <section><div class="container"><div class="section-label">Templates</div><h2>Slack Message Templates</h2><p>Standardized messages for #payroll-updates. Copy-paste and fill in the brackets.</p><div class="slack-tpl"><div class="slack-tpl-label">Variance Flag &rarr; Ashley / Brittany</div>[VARIANCE FLAG] - [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.</div><div class="slack-tpl"><div class="slack-tpl-label">Finance Notification</div>[ACTION: NEW HIRE / TERMINATION / RATE CHANGE] - [Provider Name] - Effective [Date] - [Details]. Please confirm receipt.</div><div class="slack-tpl"><div class="slack-tpl-label">Payroll Morning Summary &rarr; Lindsay</div>[PAYROLL SUMMARY] Pay period: [dates]. Variances found: [N]. Resolved: [N]. Outstanding: [N]. Reimbursements: [$]. Shift diffs captured: [Y/N].</div></div></section>
-  <footer><strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v1.0 &middot; March 2025<br>Owner: Daniel Raphael, Clinical Operations</footer>
+
+  <!-- âââ HERO âââ -->
+  <div class="hero">
+    <div class="hero-badge">Standard Operating Procedure</div>
+    <h1>Payroll Variance &amp; Processing</h1>
+    <p>End-to-end workflow for payroll variance review and processing at Fountain Vitality. No APIs required â exports, copy-paste, and structured tracking.</p>
+  </div>
+
+  <!-- âââ SYSTEMS âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Infrastructure</div>
+      <h2>Systems Involved</h2>
+      <p>Four systems are reconciled each pay period. All use manual exports â no API access needed.</p>
+      <div class="systems-grid">
+        <div class="system-card">
+          <div class="icon icon-cal">ð</div>
+          <h3>Google Calendar</h3>
+          <p>Scheduled shifts assigned by the ops/scheduling team. Export as CSV or screenshot per period.</p>
+        </div>
+        <div class="system-card">
+          <div class="icon icon-gus">ð°</div>
+          <h3>Gusto</h3>
+          <p>Official payroll schedule and time punches. Export from Admin &gt; Time Tracking.</p>
+        </div>
+        <div class="system-card">
+          <div class="icon icon-tp">â±</div>
+          <h3>Time Punch System</h3>
+          <p>Actual clock-in/out times and breaks. Export CSV from the admin portal.</p>
+        </div>
+        <div class="system-card">
+          <div class="icon icon-vt">ð</div>
+          <h3>Variance Tracker</h3>
+          <p>Google Sheet tracking all changes, approvals, and pay impact. Maintained manually throughout the period.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ WORKFLOW TIMELINE âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Workflow</div>
+      <h2>How It Works</h2>
+      <p>The payroll cycle runs in three phases â ongoing tracking, a 48-hour pre-check, and the processing morning.</p>
+      <div class="timeline">
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Part 1 â Throughout the Pay Period</div>
+          <h3>Variance Tracker Setup &amp; Ongoing Logging</h3>
+          <p>At the start of each period, prepare the Variance Tracker sheet. Log licensing reimbursements as they occur. Record shift differentials. Notify Finance immediately on new hires, terminations, rate changes, or status changes.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Part 2 â 48 Hours Before Processing</div>
+          <h3>Pre-Payroll Checklist</h3>
+          <p>Export Gusto timesheets, time punch reports, and Google Calendar shifts. Final capture of shift diffs and reimbursements. Confirm Finance has been notified on all changes. Run DST check if the period crosses a transition date.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-phase">Part 3 â Payroll Processing Morning</div>
+          <h3>Variance Scan â Approval â Correction</h3>
+          <p>Open all systems side-by-side. Compare Calendar vs. Gusto vs. punches for each provider. Flag mismatches in the tracker. Send flags to Ashley/Brittany for approval. Get provider confirmations. Make approved corrections in Gusto. Prep summary for Lindsay meeting by 8:00 AM EST.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-amber">
+        <div class="callout-icon">â ï¸</div>
+        <div><strong>Key rule:</strong> Flag first, confirm second, change third. No Gusto edits until Ashley or Brittany approve.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ MORNING CHECKLIST âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Quick Reference</div>
+      <h2>Payroll Morning Checklist</h2>
+      <p>Target: all items complete by 8:00 AM EST before the Lindsay meeting.</p>
+      <div class="checklist-columns">
+        <div class="cl-card">
+          <h3>Setup &amp; Scan</h3>
+          <ul>
+            <li>Tabs open: Gusto, Calendar, Time Punches, Tracker, Slack</li>
+            <li>Variance scan complete â all providers reviewed</li>
+            <li>All gaps flagged in tracker</li>
+            <li>DST check done (if applicable)</li>
+          </ul>
+        </div>
+        <div class="cl-card">
+          <h3>Approvals &amp; Corrections</h3>
+          <ul>
+            <li>Ashley / Brittany notified â approvals received</li>
+            <li>Provider confirmations sent and responses logged</li>
+            <li>Gusto corrections entered and verified</li>
+          </ul>
+        </div>
+        <div class="cl-card">
+          <h3>Financials</h3>
+          <ul>
+            <li>Reimbursements finalized in tracker + Gusto</li>
+            <li>Shift diffs captured for all qualifying shifts</li>
+            <li>Finance notified on hires, terms, rate changes</li>
+          </ul>
+        </div>
+        <div class="cl-card">
+          <h3>Lindsay Meeting Prep</h3>
+          <ul>
+            <li>Tracker filtered to current pay period</li>
+            <li>Summary prepared: variances found / resolved / outstanding</li>
+            <li>Gusto Admin open for live review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ DST âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Special Handling</div>
+      <h2>DST &amp; Timezone Rules</h2>
+      <p>Daylight saving transitions cause a 1-hour discrepancy for MT/MST providers. Check every period that crosses a transition date.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <h3>Identify the transition date</h3>
+          <p>Second Sunday in March (spring forward) or first Sunday in November (fall back).</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <h3>Review affected providers</h3>
+          <p>Note which shifts fell before vs. after the transition. Compare Gusto timezone vs. time punch timezone.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <h3>Confirm &amp; adjust</h3>
+          <p>If a 1-hour gap appears around 2:00 AM on transition day, confirm with the provider and adjust Gusto to reflect actual hours worked.</p>
+        </div>
+      </div>
+      <div class="callout callout-red">
+        <div class="callout-icon">ðµ</div>
+        <div><strong>Arizona exception:</strong> AZ does not observe DST. Providers there are permanently on MST (UTC-7). During DST months (MarâNov), AZ is 1 hour behind MT states like Colorado and Montana.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ ESCALATION âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Escalation</div>
+      <h2>Escalation Path</h2>
+      <p>When standard resolution isn't possible, follow this escalation ladder.</p>
+      <table class="esc-table">
+        <thead>
+          <tr><th>Situation</th><th>Contact</th><th>Channel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Provider not responding before 8 AM</td><td>Ashley G / Brittany T</td><td>Slack DM â note urgency</td></tr>
+          <tr><td>Variance unresolved before Lindsay meeting</td><td>Lindsay</td><td>Flag in meeting with documentation</td></tr>
+          <tr><td>System discrepancy with no clear fix</td><td>Lindsay + Finance</td><td>Slack + written summary in tracker</td></tr>
+          <tr><td>Gusto shows incorrect rate for processed period</td><td>Finance + Gusto Admin</td><td>Urgent â flag before payroll is submitted</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- âââ SLACK TEMPLATES âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Templates</div>
+      <h2>Slack Message Templates</h2>
+      <p>Standardized messages for #payroll-updates. Copy-paste and fill in the brackets.</p>
+
+      <div class="slack-tpl">
+        <div class="slack-tpl-label">Variance Flag â Ashley / Brittany</div>
+        [VARIANCE FLAG] â [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.
+      </div>
+
+      <div class="slack-tpl">
+        <div class="slack-tpl-label">Finance Notification</div>
+        [ACTION: NEW HIRE / TERMINATION / RATE CHANGE] â [Provider Name] â Effective [Date] â [Details]. Please confirm receipt.
+      </div>
+
+      <div class="slack-tpl">
+        <div class="slack-tpl-label">Payroll Morning Summary â Lindsay</div>
+        [PAYROLL SUMMARY] Pay period: [dates]. Variances found: [N]. Resolved: [N]. Outstanding: [N]. Reimbursements: [$]. Shift diffs captured: [Y/N].
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ SETUP REQUIREMENTS âââ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Action Required</div>
+      <h2>What's Needed to Go Live</h2>
+      <p>Four items are required before the automated payroll workflow is fully operational. Provide these to Claude to complete setup.</p>
+
+      <div class="setup-grid">
+        <div class="setup-card setup-urgent">
+          <div class="setup-number">1</div>
+          <div class="setup-content">
+            <div class="setup-status status-blocking">Blocking</div>
+            <h3>Payroll Processing Day</h3>
+            <p>Which day of the week does payroll run? This determines when the 48-hour pre-check calendar reminder fires, when the shift diff capture deadline falls, and when DST alerts trigger. Everything else is built â this is the missing piece.</p>
+            <div class="setup-action">Tell Claude: <em>"We process payroll on [day]"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-ready">
+          <div class="setup-number">2</div>
+          <div class="setup-content">
+            <div class="setup-status status-ready">Ready to Build</div>
+            <h3>Notion Payroll Checklist</h3>
+            <p>A structured database with 20 properties covering every checklist item from the SOP â tabs open, variance scan complete, approvals received, Gusto corrections entered, Lindsay meeting prep done. Schema is designed and ready to deploy.</p>
+            <div class="setup-action">Tell Claude: <em>"Create the Notion checklist"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-waiting">
+          <div class="setup-number">3</div>
+          <div class="setup-content">
+            <div class="setup-status status-waiting">Needs Channel</div>
+            <h3>Slack #payroll-updates Channel</h3>
+            <p>The SOP references a <code>#payroll-updates</code> Slack channel for variance flags, finance notifications, and morning summaries. This channel doesn't appear to exist yet. Once created, Claude will post and pin the three standardized message templates.</p>
+            <div class="setup-action">Create <code>#payroll-updates</code> in Slack, then tell Claude: <em>"Pin the Slack templates"</em></div>
+          </div>
+        </div>
+
+        <div class="setup-card setup-ready">
+          <div class="setup-number">4</div>
+          <div class="setup-content">
+            <div class="setup-status status-ready">Ready to Test</div>
+            <h3>First Variance Scan â Test Run</h3>
+            <p>To validate the automated variance scan, Claude needs two CSV exports from one pay period: a Gusto timesheet export and a time punch report. Claude will cross-reference them provider by provider, flag mismatches, and populate the Variance Tracker automatically.</p>
+            <div class="setup-action">Export both CSVs and upload them: <em>"Here are the Gusto and time punch exports for [dates]"</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-amber" style="margin-top: 1.5rem;">
+        <div class="callout-icon">ð</div>
+        <div><strong>Once all four are complete:</strong> Claude will run the full payroll variance workflow â calendar reminders fire automatically, the Notion checklist tracks each pay period, Slack templates are pinned and ready, and variance scans run on demand from CSV uploads.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- âââ FOOTER âââ -->
+  <footer>
+    <strong>Fountain Vitality</strong> Â· Payroll Variance &amp; Processing SOP Â· v1.0 Â· March 2026<br>
+    Owner: Daniel Raphael, Clinical Operations
+  </footer>
+
 </body>
 </html>
