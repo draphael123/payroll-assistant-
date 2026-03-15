@@ -13,12 +13,30 @@
       --slate-700: #334155;
       --slate-500: #64748B;
       --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
       --slate-50: #F8FAFC;
       --white: #FFFFFF;
       --amber: #F59E0B;
       --amber-light: #FEF3C7;
       --red-light: #FEE2E2;
       --red: #EF4444;
+      --green: #22C55E;
+    }
+
+    /* Dark mode variables */
+    [data-theme="dark"] {
+      --teal: #2DD4BF;
+      --teal-light: #134E4A;
+      --teal-dark: #5EEAD4;
+      --slate-900: #F8FAFC;
+      --slate-700: #CBD5E1;
+      --slate-500: #94A3B8;
+      --slate-200: #334155;
+      --slate-100: #1E293B;
+      --slate-50: #0F172A;
+      --white: #1E293B;
+      --amber-light: #451A03;
+      --red-light: #450A0A;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -516,9 +534,314 @@
       border-top: 1px solid var(--slate-200);
     }
     footer strong { color: var(--slate-900); }
+
+    /* -- Sticky Navigation -- */
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--slate-200);
+      z-index: 1000;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-nav.visible { transform: translateY(0); }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { background: var(--slate-100); color: var(--slate-700); }
+    .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+    .nav-controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .nav-btn {
+      background: none;
+      border: 1px solid var(--slate-200);
+      border-radius: 6px;
+      padding: 0.35rem 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--slate-500);
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: var(--slate-100); color: var(--slate-700); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-brand { font-size: 0.8rem; }
+    }
+
+    /* -- Quick Links Bar -- */
+    .quick-links {
+      background: var(--slate-100);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 0.75rem 0;
+    }
+    .quick-links-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .quick-links-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-500);
+    }
+    .quick-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--slate-700);
+      text-decoration: none;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .quick-link:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* -- Copy Button -- */
+    .slack-tpl-wrapper {
+      position: relative;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      color: var(--slate-500);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { background: var(--teal-light); color: var(--teal-dark); border-color: var(--teal); }
+    .copy-btn.copied { background: var(--green); color: white; border-color: var(--green); }
+
+    /* -- Interactive Checkboxes -- */
+    .interactive-check {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .interactive-check:hover { background: var(--slate-50); }
+    .interactive-check.checked {
+      text-decoration: line-through;
+      color: var(--slate-400);
+    }
+    .interactive-check.checked::before {
+      content: '✓' !important;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    /* -- Collapsible Sections -- */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .section-header:hover h2 { color: var(--teal); }
+    .collapse-icon {
+      font-size: 1.2rem;
+      color: var(--slate-400);
+      transition: transform 0.3s;
+    }
+    .section-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .section-content.collapsed {
+      max-height: 0 !important;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    /* -- Phase Progress Indicator -- */
+    .phase-progress {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+    }
+    .progress-step {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--slate-400);
+      background: var(--slate-50);
+      border: 2px solid var(--slate-200);
+      transition: all 0.3s;
+    }
+    .progress-step.complete {
+      background: var(--teal-light);
+      border-color: var(--teal);
+      color: var(--teal-dark);
+    }
+    .progress-step.complete::before {
+      content: '✓ ';
+    }
+
+    /* -- Sheet Template Button -- */
+    .template-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-top: 1rem;
+    }
+    .template-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+    /* -- Changelog -- */
+    .changelog {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .changelog-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--slate-100);
+    }
+    .changelog-item:last-child { border-bottom: none; }
+    .changelog-version {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal);
+      background: var(--teal-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      height: fit-content;
+    }
+    .changelog-details h4 {
+      font-size: 0.85rem;
+      color: var(--slate-900);
+      margin-bottom: 0.25rem;
+    }
+    .changelog-details p {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin: 0;
+    }
+    .changelog-date {
+      font-size: 0.7rem;
+      color: var(--slate-400);
+    }
+
+    /* -- Keyboard Shortcut Hints -- */
+    .kbd {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-family: monospace;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0.5rem;
+      color: var(--slate-500);
+    }
+
+    /* -- Print Styles -- */
+    @media print {
+      .sticky-nav, .quick-links, .nav-controls, .copy-btn, .template-btn,
+      .collapse-icon, .phase-progress, .kbd { display: none !important; }
+      body { background: white; }
+      .hero { background: var(--teal) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { page-break-inside: avoid; }
+      .section-content { max-height: none !important; }
+      .checklist-columns { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- === STICKY NAVIGATION === -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="nav-inner">
+      <span class="nav-brand">Payroll SOP</span>
+      <div class="nav-links">
+        <a href="#setup" data-key="1">Setup<span class="kbd">1</span></a>
+        <a href="#systems" data-key="2">Systems<span class="kbd">2</span></a>
+        <a href="#sheet" data-key="3">Sheet<span class="kbd">3</span></a>
+        <a href="#workflow" data-key="4">Workflow<span class="kbd">4</span></a>
+        <a href="#checklist" data-key="5">Checklist<span class="kbd">5</span></a>
+        <a href="#dst" data-key="6">DST<span class="kbd">6</span></a>
+        <a href="#escalation" data-key="7">Escalation<span class="kbd">7</span></a>
+        <a href="#templates" data-key="8">Templates<span class="kbd">8</span></a>
+        <a href="#changelog" data-key="9">Changelog<span class="kbd">9</span></a>
+      </div>
+      <div class="nav-controls">
+        <button class="nav-btn" id="darkModeToggle" title="Toggle dark mode (D)">&#9790;</button>
+        <button class="nav-btn" id="printBtn" title="Print (P)">&#128424;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- === QUICK LINKS BAR === -->
+  <div class="quick-links">
+    <div class="quick-links-inner">
+      <span class="quick-links-label">Quick Links:</span>
+      <a href="https://app.gusto.com" target="_blank" class="quick-link">&#128176; Gusto</a>
+      <a href="https://calendar.google.com" target="_blank" class="quick-link">&#128197; Google Calendar</a>
+      <a href="https://slack.com" target="_blank" class="quick-link">&#128172; Slack</a>
+      <a href="https://docs.google.com/spreadsheets" target="_blank" class="quick-link">&#128202; Sheets</a>
+    </div>
+  </div>
 
   <!-- === HERO === -->
   <div class="hero">
@@ -528,11 +851,24 @@
   </div>
 
   <!-- === SETUP REQUIREMENTS === -->
-  <section>
+  <section id="setup">
     <div class="container">
-      <div class="section-label">Go-Live Checklist</div>
-      <h2>Three Steps to Launch</h2>
-      <p>Complete these phases in order. Each phase unlocks the next. Total setup: one conversation with Claude.</p>
+      <div class="section-header" data-section="setup">
+        <div>
+          <div class="section-label">Go-Live Checklist</div>
+          <h2>Three Steps to Launch</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
+        <p>Complete these phases in order. Each phase unlocks the next. Total setup: one conversation with Claude.</p>
+
+        <!-- Phase Progress Indicator -->
+        <div class="phase-progress">
+          <div class="progress-step" data-phase="1">Phase 1: Config</div>
+          <div class="progress-step" data-phase="2">Phase 2: Build</div>
+          <div class="progress-step" data-phase="3">Phase 3: Test</div>
+        </div>
 
       <!-- PHASE 1 -->
       <div class="phase-block">
@@ -654,14 +990,21 @@
         <div class="callout-icon">&#127881;</div>
         <div><strong>After Phase 3:</strong> You're live. Each pay period, duplicate the sheet template, run the checklist, upload CSVs for variance scanning, and post updates to Slack. The workflow runs itself.</div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === SYSTEMS === -->
-  <section>
+  <section id="systems">
     <div class="container">
-      <div class="section-label">Infrastructure</div>
-      <h2>Systems Involved</h2>
+      <div class="section-header" data-section="systems">
+        <div>
+          <div class="section-label">Infrastructure</div>
+          <h2>Systems Involved</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
       <p>Four systems are reconciled each pay period. All use manual exports &mdash; no API access needed.</p>
       <div class="systems-grid">
         <div class="system-card">
@@ -685,15 +1028,24 @@
           <p>Google Sheet tracking all changes, approvals, and pay impact. Maintained manually throughout the period.</p>
         </div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === SPREADSHEET STRUCTURE === -->
-  <section>
+  <section id="sheet">
     <div class="container">
-      <div class="section-label">Core Tool</div>
-      <h2>The Payroll Processing Sheet</h2>
+      <div class="section-header" data-section="sheet">
+        <div>
+          <div class="section-label">Core Tool</div>
+          <h2>The Payroll Processing Sheet</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
       <p>Each pay period gets its own Google Sheet, duplicated from a master template. One sheet holds everything &mdash; checklist, variance data, reimbursements, and shift diffs. No switching between tools.</p>
+
+      <a href="#" class="template-btn" id="copyTemplateBtn">&#128196; Copy Sheet Template</a>
 
       <div class="sheet-overview">
         <div class="sheet-tab-grid">
@@ -791,14 +1143,21 @@
         <div class="callout-icon">&#128203;</div>
         <div><strong>How to use:</strong> At the start of each pay period, duplicate the template sheet and rename it with the pay period dates (e.g., "Payroll 03-01 to 03-15"). Work in that sheet throughout the period. Archive completed sheets to a "Completed" folder.</div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === WORKFLOW TIMELINE === -->
-  <section>
+  <section id="workflow">
     <div class="container">
-      <div class="section-label">Workflow</div>
-      <h2>How It Works</h2>
+      <div class="section-header" data-section="workflow">
+        <div>
+          <div class="section-label">Workflow</div>
+          <h2>How It Works</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
       <p>The payroll cycle runs in three phases &mdash; ongoing tracking, a 48-hour pre-check, and the processing morning.</p>
       <div class="timeline">
         <div class="tl-item active">
@@ -825,58 +1184,72 @@
         <div class="callout-icon">&#9888;</div>
         <div><strong>Key rule:</strong> Flag first, confirm second, change third. No Gusto edits until Ashley or Brittany approve.</div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === MORNING CHECKLIST === -->
-  <section>
+  <section id="checklist">
     <div class="container">
-      <div class="section-label">Quick Reference</div>
-      <h2>Payroll Morning Checklist</h2>
-      <p>Target: all items complete by 8:00 AM EST before the Lindsay meeting.</p>
+      <div class="section-header" data-section="checklist">
+        <div>
+          <div class="section-label">Quick Reference</div>
+          <h2>Payroll Morning Checklist</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
+      <p>Target: all items complete by 8:00 AM EST before the Lindsay meeting. <em>Click items to mark complete.</em></p>
       <div class="checklist-columns">
         <div class="cl-card">
           <h3>Setup &amp; Scan</h3>
           <ul>
-            <li>Tabs open: Gusto, Calendar, Time Punches, Tracker, Slack</li>
-            <li>Variance scan complete &mdash; all providers reviewed</li>
-            <li>All gaps flagged in tracker</li>
-            <li>DST check done (if applicable)</li>
+            <li class="interactive-check" data-check="cl-1">Tabs open: Gusto, Calendar, Time Punches, Tracker, Slack</li>
+            <li class="interactive-check" data-check="cl-2">Variance scan complete &mdash; all providers reviewed</li>
+            <li class="interactive-check" data-check="cl-3">All gaps flagged in tracker</li>
+            <li class="interactive-check" data-check="cl-4">DST check done (if applicable)</li>
           </ul>
         </div>
         <div class="cl-card">
           <h3>Approvals &amp; Corrections</h3>
           <ul>
-            <li>Ashley / Brittany notified &mdash; approvals received</li>
-            <li>Provider confirmations sent and responses logged</li>
-            <li>Gusto corrections entered and verified</li>
+            <li class="interactive-check" data-check="cl-5">Ashley / Brittany notified &mdash; approvals received</li>
+            <li class="interactive-check" data-check="cl-6">Provider confirmations sent and responses logged</li>
+            <li class="interactive-check" data-check="cl-7">Gusto corrections entered and verified</li>
           </ul>
         </div>
         <div class="cl-card">
           <h3>Financials</h3>
           <ul>
-            <li>Reimbursements finalized in tracker + Gusto</li>
-            <li>Shift diffs captured for all qualifying shifts</li>
-            <li>Finance notified on hires, terms, rate changes</li>
+            <li class="interactive-check" data-check="cl-8">Reimbursements finalized in tracker + Gusto</li>
+            <li class="interactive-check" data-check="cl-9">Shift diffs captured for all qualifying shifts</li>
+            <li class="interactive-check" data-check="cl-10">Finance notified on hires, terms, rate changes</li>
           </ul>
         </div>
         <div class="cl-card">
           <h3>Lindsay Meeting Prep</h3>
           <ul>
-            <li>Tracker filtered to current pay period</li>
-            <li>Summary prepared: variances found / resolved / outstanding</li>
-            <li>Gusto Admin open for live review</li>
+            <li class="interactive-check" data-check="cl-11">Tracker filtered to current pay period</li>
+            <li class="interactive-check" data-check="cl-12">Summary prepared: variances found / resolved / outstanding</li>
+            <li class="interactive-check" data-check="cl-13">Gusto Admin open for live review</li>
           </ul>
         </div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === DST === -->
-  <section>
+  <section id="dst">
     <div class="container">
-      <div class="section-label">Special Handling</div>
-      <h2>DST &amp; Timezone Rules</h2>
+      <div class="section-header" data-section="dst">
+        <div>
+          <div class="section-label">Special Handling</div>
+          <h2>DST &amp; Timezone Rules</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
       <p>Daylight saving transitions cause a 1-hour discrepancy for MT/MST providers. Check every period that crosses a transition date.</p>
       <div class="timeline">
         <div class="tl-item">
@@ -899,14 +1272,21 @@
         <div class="callout-icon">&#127797;</div>
         <div><strong>Arizona exception:</strong> AZ does not observe DST. Providers there are permanently on MST (UTC-7). During DST months (Mar&ndash;Nov), AZ is 1 hour behind MT states like Colorado and Montana.</div>
       </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === ESCALATION === -->
-  <section>
+  <section id="escalation">
     <div class="container">
-      <div class="section-label">Escalation</div>
-      <h2>Escalation Path</h2>
+      <div class="section-header" data-section="escalation">
+        <div>
+          <div class="section-label">Escalation</div>
+          <h2>Escalation Path</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
       <p>When standard resolution isn't possible, follow this escalation ladder.</p>
       <table class="esc-table">
         <thead>
@@ -919,38 +1299,308 @@
           <tr><td>Gusto shows incorrect rate for processed period</td><td>Finance + Gusto Admin</td><td>Urgent &mdash; flag before payroll is submitted</td></tr>
         </tbody>
       </table>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === SLACK TEMPLATES === -->
-  <section>
+  <section id="templates">
     <div class="container">
-      <div class="section-label">Templates</div>
-      <h2>Slack Message Templates</h2>
-      <p>Standardized messages for #payroll-updates. Copy-paste and fill in the brackets.</p>
+      <div class="section-header" data-section="templates">
+        <div>
+          <div class="section-label">Templates</div>
+          <h2>Slack Message Templates</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
+      <p>Standardized messages for #payroll-updates. Click the copy button to copy to clipboard.</p>
 
-      <div class="slack-tpl">
-        <div class="slack-tpl-label">Variance Flag &rarr; Ashley / Brittany</div>
-        [VARIANCE FLAG] &mdash; [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.
+      <div class="slack-tpl-wrapper">
+        <button class="copy-btn" data-copy="tpl-1">Copy</button>
+        <div class="slack-tpl" id="tpl-1">
+          <div class="slack-tpl-label">Variance Flag &rarr; Ashley / Brittany</div>
+          <span class="tpl-text">[VARIANCE FLAG] — [Provider Name] | [Date] | Issue: [describe] | Proposed fix: [describe] | Awaiting your approval before making changes.</span>
+        </div>
       </div>
 
-      <div class="slack-tpl">
-        <div class="slack-tpl-label">Finance Notification</div>
-        [ACTION: NEW HIRE / TERMINATION / RATE CHANGE] &mdash; [Provider Name] &mdash; Effective [Date] &mdash; [Details]. Please confirm receipt.
+      <div class="slack-tpl-wrapper">
+        <button class="copy-btn" data-copy="tpl-2">Copy</button>
+        <div class="slack-tpl" id="tpl-2">
+          <div class="slack-tpl-label">Finance Notification</div>
+          <span class="tpl-text">[ACTION: NEW HIRE / TERMINATION / RATE CHANGE] — [Provider Name] — Effective [Date] — [Details]. Please confirm receipt.</span>
+        </div>
       </div>
 
-      <div class="slack-tpl">
-        <div class="slack-tpl-label">Payroll Morning Summary &rarr; Lindsay</div>
-        [PAYROLL SUMMARY] Pay period: [dates]. Variances found: [N]. Resolved: [N]. Outstanding: [N]. Reimbursements: [$]. Shift diffs captured: [Y/N].
+      <div class="slack-tpl-wrapper">
+        <button class="copy-btn" data-copy="tpl-3">Copy</button>
+        <div class="slack-tpl" id="tpl-3">
+          <div class="slack-tpl-label">Payroll Morning Summary &rarr; Lindsay</div>
+          <span class="tpl-text">[PAYROLL SUMMARY] Pay period: [dates]. Variances found: [N]. Resolved: [N]. Outstanding: [N]. Reimbursements: [$]. Shift diffs captured: [Y/N].</span>
+        </div>
       </div>
+      </div><!-- end section-content -->
+    </div>
+  </section>
+
+  <!-- === CHANGELOG === -->
+  <section id="changelog">
+    <div class="container">
+      <div class="section-header" data-section="changelog">
+        <div>
+          <div class="section-label">Version History</div>
+          <h2>Changelog</h2>
+        </div>
+        <span class="collapse-icon">&#9660;</span>
+      </div>
+      <div class="section-content">
+      <p>Track updates and changes to this SOP.</p>
+      <div class="changelog">
+        <div class="changelog-item">
+          <span class="changelog-version">v3.0</span>
+          <div class="changelog-details">
+            <h4>Interactive Features &amp; UX Improvements</h4>
+            <p>Added sticky navigation, dark mode, interactive checklists, copy-to-clipboard, collapsible sections, keyboard shortcuts, and quick links bar.</p>
+            <span class="changelog-date">March 2026</span>
+          </div>
+        </div>
+        <div class="changelog-item">
+          <span class="changelog-version">v2.0</span>
+          <div class="changelog-details">
+            <h4>Google Sheets Workflow</h4>
+            <p>Replaced Notion checklist with Google Sheets approach. Added 3-phase go-live structure and detailed sheet template documentation.</p>
+            <span class="changelog-date">March 2026</span>
+          </div>
+        </div>
+        <div class="changelog-item">
+          <span class="changelog-version">v1.0</span>
+          <div class="changelog-details">
+            <h4>Initial Release</h4>
+            <p>Core SOP documentation: systems overview, workflow timeline, morning checklist, DST rules, escalation paths, and Slack templates.</p>
+            <span class="changelog-date">March 2026</span>
+          </div>
+        </div>
+      </div>
+      </div><!-- end section-content -->
     </div>
   </section>
 
   <!-- === FOOTER === -->
   <footer>
-    <strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v2.0 &middot; March 2026<br>
-    Owner: Daniel Raphael, Clinical Operations
+    <strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v3.0 &middot; March 2026<br>
+    Owner: Daniel Raphael, Clinical Operations<br>
+    <span style="font-size: 0.7rem; color: var(--slate-400);">Press <kbd>?</kbd> for keyboard shortcuts</span>
   </footer>
+
+  <!-- === JAVASCRIPT === -->
+  <script>
+    (function() {
+      // ===== STORAGE KEYS =====
+      const STORAGE_KEYS = {
+        theme: 'payroll-sop-theme',
+        checks: 'payroll-sop-checks',
+        phases: 'payroll-sop-phases',
+        collapsed: 'payroll-sop-collapsed'
+      };
+
+      // ===== DARK MODE =====
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const html = document.documentElement;
+
+      function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem(STORAGE_KEYS.theme, theme);
+        darkModeToggle.innerHTML = theme === 'dark' ? '&#9728;' : '&#9790;';
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem(STORAGE_KEYS.theme) || 'light';
+      setTheme(savedTheme);
+
+      darkModeToggle.addEventListener('click', () => {
+        const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+      });
+
+      // ===== STICKY NAVIGATION =====
+      const stickyNav = document.getElementById('stickyNav');
+      const hero = document.querySelector('.hero');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > hero.offsetHeight) {
+          stickyNav.classList.add('visible');
+        } else {
+          stickyNav.classList.remove('visible');
+        }
+
+        // Update active nav link
+        const sections = document.querySelectorAll('section[id]');
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // ===== PRINT BUTTON =====
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+      // ===== COPY TO CLIPBOARD =====
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tplId = btn.getAttribute('data-copy');
+          const tplText = document.querySelector('#' + tplId + ' .tpl-text').textContent;
+
+          navigator.clipboard.writeText(tplText).then(() => {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = 'Copy';
+              btn.classList.remove('copied');
+            }, 2000);
+          });
+        });
+      });
+
+      // ===== INTERACTIVE CHECKLISTS =====
+      const savedChecks = JSON.parse(localStorage.getItem(STORAGE_KEYS.checks) || '{}');
+
+      document.querySelectorAll('.interactive-check').forEach(item => {
+        const checkId = item.getAttribute('data-check');
+
+        // Restore saved state
+        if (savedChecks[checkId]) {
+          item.classList.add('checked');
+        }
+
+        item.addEventListener('click', () => {
+          item.classList.toggle('checked');
+          savedChecks[checkId] = item.classList.contains('checked');
+          localStorage.setItem(STORAGE_KEYS.checks, JSON.stringify(savedChecks));
+        });
+      });
+
+      // ===== PHASE PROGRESS =====
+      const savedPhases = JSON.parse(localStorage.getItem(STORAGE_KEYS.phases) || '{}');
+
+      document.querySelectorAll('.progress-step').forEach(step => {
+        const phase = step.getAttribute('data-phase');
+
+        // Restore saved state
+        if (savedPhases[phase]) {
+          step.classList.add('complete');
+        }
+
+        step.addEventListener('click', () => {
+          step.classList.toggle('complete');
+          savedPhases[phase] = step.classList.contains('complete');
+          localStorage.setItem(STORAGE_KEYS.phases, JSON.stringify(savedPhases));
+        });
+      });
+
+      // ===== COLLAPSIBLE SECTIONS =====
+      const savedCollapsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.collapsed) || '{}');
+
+      document.querySelectorAll('.section-header').forEach(header => {
+        const sectionId = header.getAttribute('data-section');
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.collapse-icon');
+
+        // Restore saved state
+        if (savedCollapsed[sectionId]) {
+          content.classList.add('collapsed');
+          icon.style.transform = 'rotate(-90deg)';
+        }
+
+        // Set initial max-height for animation
+        if (!content.classList.contains('collapsed')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+
+        header.addEventListener('click', () => {
+          const isCollapsed = content.classList.toggle('collapsed');
+          savedCollapsed[sectionId] = isCollapsed;
+          localStorage.setItem(STORAGE_KEYS.collapsed, JSON.stringify(savedCollapsed));
+
+          if (isCollapsed) {
+            content.style.maxHeight = '0';
+            icon.style.transform = 'rotate(-90deg)';
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+
+      // ===== KEYBOARD SHORTCUTS =====
+      document.addEventListener('keydown', (e) => {
+        // Ignore if typing in an input
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        const key = e.key.toLowerCase();
+
+        // Number keys 1-9 for navigation
+        if (key >= '1' && key <= '9') {
+          const link = document.querySelector(`.nav-links a[data-key="${key}"]`);
+          if (link) {
+            e.preventDefault();
+            link.click();
+          }
+        }
+
+        // D for dark mode
+        if (key === 'd') {
+          e.preventDefault();
+          darkModeToggle.click();
+        }
+
+        // P for print
+        if (key === 'p') {
+          e.preventDefault();
+          window.print();
+        }
+
+        // ? for help
+        if (key === '?') {
+          e.preventDefault();
+          alert(
+            'Keyboard Shortcuts:\n\n' +
+            '1-9: Jump to section\n' +
+            'D: Toggle dark mode\n' +
+            'P: Print page\n' +
+            '?: Show this help'
+          );
+        }
+      });
+
+      // ===== TEMPLATE BUTTON PLACEHOLDER =====
+      document.getElementById('copyTemplateBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Sheet template link will be added here. Tell Claude: "Create the payroll sheet template" to generate the Google Sheet.');
+      });
+
+      // ===== SMOOTH SCROLL =====
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+    })();
+  </script>
 
 </body>
 </html>
