@@ -313,6 +313,200 @@
       border-radius: 3px;
     }
 
+    /* -- Phase Blocks -- */
+    .phase-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .phase-1 { background: linear-gradient(135deg, var(--teal-light) 0%, #E0F2FE 100%); }
+    .phase-2 { background: linear-gradient(135deg, #DBEAFE 0%, #E0E7FF 100%); }
+    .phase-3 { background: linear-gradient(135deg, #D1FAE5 0%, var(--teal-light) 100%); }
+    .phase-number {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .phase-title {
+      flex: 1;
+    }
+    .phase-title h3 {
+      font-size: 1.1rem;
+      color: var(--slate-900);
+      margin: 0;
+    }
+    .phase-subtitle {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+    }
+    .phase-time {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      background: rgba(255,255,255,0.7);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+    .phase-body {
+      padding: 1.25rem;
+    }
+    .phase-why {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      background: var(--slate-50);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--teal);
+    }
+    .phase-tasks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .phase-task {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .task-check {
+      font-size: 1.1rem;
+      color: var(--slate-300);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .task-content strong {
+      font-size: 0.9rem;
+      color: var(--slate-900);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .task-content p {
+      font-size: 0.82rem;
+      color: var(--slate-500);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .task-content code {
+      font-size: 0.78rem;
+      background: var(--slate-200);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+    .phase-output {
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      background: var(--teal-light);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+    }
+    .output-label {
+      font-weight: 600;
+      color: var(--teal-dark);
+    }
+
+    /* -- Spreadsheet Structure -- */
+    .sheet-tab-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 700px) { .sheet-tab-grid { grid-template-columns: 1fr; } }
+    .sheet-tab {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .tab-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .tab-header h3 {
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      margin: 0;
+    }
+    .tab-icon {
+      font-size: 1.1rem;
+    }
+    .tab-checklist { background: var(--teal-light); }
+    .tab-variance { background: #DBEAFE; }
+    .tab-reimburse { background: #D1FAE5; }
+    .tab-diffs { background: #FEF3C7; }
+    .tab-body {
+      padding: 1rem;
+    }
+    .tab-purpose {
+      font-size: 0.82rem;
+      color: var(--slate-500);
+      margin-bottom: 0.75rem;
+    }
+    .tab-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+    .col-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--slate-200);
+    }
+    .tab-rows {
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+      padding-left: 0;
+    }
+    .tab-rows li {
+      padding: 0.15rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .tab-rows li::before {
+      content: '•';
+      position: absolute;
+      left: 0.25rem;
+      color: var(--slate-400);
+    }
+    .tab-note {
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      background: var(--slate-50);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border-left: 2px solid var(--teal);
+      margin-top: 0.5rem;
+    }
+
     /* -- Footer -- */
     footer {
       text-align: center;
@@ -336,55 +530,129 @@
   <!-- === SETUP REQUIREMENTS === -->
   <section>
     <div class="container">
-      <div class="section-label">Action Required</div>
-      <h2>What's Needed to Go Live</h2>
-      <p>Four items are required before the automated payroll workflow is fully operational. Provide these to Claude to complete setup.</p>
+      <div class="section-label">Go-Live Checklist</div>
+      <h2>Three Steps to Launch</h2>
+      <p>Complete these phases in order. Each phase unlocks the next. Total setup: one conversation with Claude.</p>
 
-      <div class="setup-grid">
-        <div class="setup-card setup-urgent">
-          <div class="setup-number">1</div>
-          <div class="setup-content">
-            <div class="setup-status status-blocking">Blocking</div>
-            <h3>Payroll Processing Day</h3>
-            <p>Which day of the week does payroll run? This determines when the 48-hour pre-check calendar reminder fires, when the shift diff capture deadline falls, and when DST alerts trigger. Everything else is built &mdash; this is the missing piece.</p>
-            <div class="setup-action">Tell Claude: <em>"We process payroll on [day]"</em></div>
+      <!-- PHASE 1 -->
+      <div class="phase-block">
+        <div class="phase-header phase-1">
+          <span class="phase-number">1</span>
+          <div class="phase-title">
+            <h3>Configuration</h3>
+            <span class="phase-subtitle">Tell Claude your schedule</span>
+          </div>
+          <span class="phase-time">2 minutes</span>
+        </div>
+        <div class="phase-body">
+          <p class="phase-why"><strong>Why first:</strong> The payroll processing day determines all downstream timing &mdash; when reminders fire, when deadlines fall, when DST checks trigger.</p>
+          <div class="phase-tasks">
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Confirm payroll day</strong>
+                <p>Tell Claude which day payroll runs (e.g., "We process payroll on Wednesdays")</p>
+              </div>
+            </div>
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Confirm pay period cadence</strong>
+                <p>Bi-weekly? Semi-monthly? This sets the sheet duplication schedule.</p>
+              </div>
+            </div>
+          </div>
+          <div class="phase-output">
+            <span class="output-label">Output:</span> Calendar reminder timing configured, deadline calculations set
           </div>
         </div>
+      </div>
 
-        <div class="setup-card setup-ready">
-          <div class="setup-number">2</div>
-          <div class="setup-content">
-            <div class="setup-status status-ready">Ready to Build</div>
-            <h3>Notion Payroll Checklist</h3>
-            <p>A structured database with 20 properties covering every checklist item from the SOP &mdash; tabs open, variance scan complete, approvals received, Gusto corrections entered, Lindsay meeting prep done. Schema is designed and ready to deploy.</p>
-            <div class="setup-action">Tell Claude: <em>"Create the Notion checklist"</em></div>
+      <!-- PHASE 2 -->
+      <div class="phase-block">
+        <div class="phase-header phase-2">
+          <span class="phase-number">2</span>
+          <div class="phase-title">
+            <h3>Infrastructure</h3>
+            <span class="phase-subtitle">Build the tools</span>
+          </div>
+          <span class="phase-time">15 minutes</span>
+        </div>
+        <div class="phase-body">
+          <p class="phase-why"><strong>Why second:</strong> With timing confirmed, Claude can build the sheet template with correct deadline labels and create the Slack channel structure.</p>
+          <div class="phase-tasks">
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Create Google Sheet template</strong>
+                <p>Claude generates the 4-tab template (Checklist, Variance Scan, Reimbursements, Shift Diffs) with formulas and conditional formatting. You'll receive a link to copy to your Drive.</p>
+              </div>
+            </div>
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Create Slack channel</strong>
+                <p>You create <code>#payroll-updates</code> in Slack. Then tell Claude &mdash; Claude will provide the three pinned message templates to copy in.</p>
+              </div>
+            </div>
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Set up calendar reminders</strong>
+                <p>Claude provides the Google Calendar event details: 48-hour pre-check reminder, payroll morning alert, DST transition alerts (March/November).</p>
+              </div>
+            </div>
+          </div>
+          <div class="phase-output">
+            <span class="output-label">Output:</span> Sheet template ready, Slack channel active, calendar reminders scheduled
           </div>
         </div>
+      </div>
 
-        <div class="setup-card setup-waiting">
-          <div class="setup-number">3</div>
-          <div class="setup-content">
-            <div class="setup-status status-waiting">Needs Channel</div>
-            <h3>Slack #payroll-updates Channel</h3>
-            <p>The SOP references a <code>#payroll-updates</code> Slack channel for variance flags, finance notifications, and morning summaries. This channel doesn't appear to exist yet. Once created, Claude will post and pin the three standardized message templates.</p>
-            <div class="setup-action">Create <code>#payroll-updates</code> in Slack, then tell Claude: <em>"Pin the Slack templates"</em></div>
+      <!-- PHASE 3 -->
+      <div class="phase-block">
+        <div class="phase-header phase-3">
+          <span class="phase-number">3</span>
+          <div class="phase-title">
+            <h3>Validation</h3>
+            <span class="phase-subtitle">Test with real data</span>
           </div>
+          <span class="phase-time">20 minutes</span>
         </div>
-
-        <div class="setup-card setup-ready">
-          <div class="setup-number">4</div>
-          <div class="setup-content">
-            <div class="setup-status status-ready">Ready to Test</div>
-            <h3>First Variance Scan &mdash; Test Run</h3>
-            <p>To validate the automated variance scan, Claude needs two CSV exports from one pay period: a Gusto timesheet export and a time punch report. Claude will cross-reference them provider by provider, flag mismatches, and populate the Variance Tracker automatically.</p>
-            <div class="setup-action">Export both CSVs and upload them: <em>"Here are the Gusto and time punch exports for [dates]"</em></div>
+        <div class="phase-body">
+          <p class="phase-why"><strong>Why third:</strong> With tools built, run a test using actual CSV exports to confirm the variance scan works and the sheet populates correctly.</p>
+          <div class="phase-tasks">
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Export test data</strong>
+                <p>Pull one completed pay period: Gusto timesheet CSV + Time punch report CSV + Google Calendar export (optional).</p>
+              </div>
+            </div>
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Run variance scan</strong>
+                <p>Upload CSVs to Claude. Claude cross-references provider by provider, flags mismatches, and shows you how the Variance Scan tab would populate.</p>
+              </div>
+            </div>
+            <div class="phase-task">
+              <span class="task-check">&#9744;</span>
+              <div class="task-content">
+                <strong>Verify results</strong>
+                <p>Confirm flagged variances match what you'd expect. Adjust thresholds if needed (default: flag mismatches &gt; 0.25 hrs).</p>
+              </div>
+            </div>
+          </div>
+          <div class="phase-output">
+            <span class="output-label">Output:</span> Validated workflow, ready for next live pay period
           </div>
         </div>
       </div>
 
       <div class="callout callout-amber" style="margin-top: 1.5rem;">
-        <div class="callout-icon">&#128640;</div>
-        <div><strong>Once all four are complete:</strong> Claude will run the full payroll variance workflow &mdash; calendar reminders fire automatically, the Notion checklist tracks each pay period, Slack templates are pinned and ready, and variance scans run on demand from CSV uploads.</div>
+        <div class="callout-icon">&#127881;</div>
+        <div><strong>After Phase 3:</strong> You're live. Each pay period, duplicate the sheet template, run the checklist, upload CSVs for variance scanning, and post updates to Slack. The workflow runs itself.</div>
       </div>
     </div>
   </section>
@@ -416,6 +684,112 @@
           <h3>Variance Tracker</h3>
           <p>Google Sheet tracking all changes, approvals, and pay impact. Maintained manually throughout the period.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === SPREADSHEET STRUCTURE === -->
+  <section>
+    <div class="container">
+      <div class="section-label">Core Tool</div>
+      <h2>The Payroll Processing Sheet</h2>
+      <p>Each pay period gets its own Google Sheet, duplicated from a master template. One sheet holds everything &mdash; checklist, variance data, reimbursements, and shift diffs. No switching between tools.</p>
+
+      <div class="sheet-overview">
+        <div class="sheet-tab-grid">
+          <div class="sheet-tab">
+            <div class="tab-header tab-checklist">
+              <span class="tab-icon">&#9745;</span>
+              <h3>Checklist</h3>
+            </div>
+            <div class="tab-body">
+              <p class="tab-purpose">Track completion of all payroll morning tasks</p>
+              <div class="tab-columns">
+                <span class="col-tag">Task</span>
+                <span class="col-tag">Done</span>
+                <span class="col-tag">Time</span>
+                <span class="col-tag">Notes</span>
+              </div>
+              <ul class="tab-rows">
+                <li>Tabs open (Gusto, Calendar, Punches, Tracker, Slack)</li>
+                <li>Variance scan complete</li>
+                <li>All gaps flagged</li>
+                <li>DST check done</li>
+                <li>Ashley/Brittany notified</li>
+                <li>Approvals received</li>
+                <li>Provider confirmations sent</li>
+                <li>Gusto corrections entered</li>
+                <li>Reimbursements finalized</li>
+                <li>Shift diffs captured</li>
+                <li>Finance notified</li>
+                <li>Lindsay summary prepared</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sheet-tab">
+            <div class="tab-header tab-variance">
+              <span class="tab-icon">&#128269;</span>
+              <h3>Variance Scan</h3>
+            </div>
+            <div class="tab-body">
+              <p class="tab-purpose">Provider-by-provider comparison across all three systems</p>
+              <div class="tab-columns">
+                <span class="col-tag">Provider</span>
+                <span class="col-tag">Cal Hrs</span>
+                <span class="col-tag">Gusto Hrs</span>
+                <span class="col-tag">Punch Hrs</span>
+                <span class="col-tag">Delta</span>
+                <span class="col-tag">Issue</span>
+                <span class="col-tag">Approved</span>
+                <span class="col-tag">Fixed</span>
+              </div>
+              <p class="tab-note">Paste CSV data directly. Conditional formatting highlights mismatches &gt; 0.25 hrs. Filter by "Issue" column to see outstanding items.</p>
+            </div>
+          </div>
+
+          <div class="sheet-tab">
+            <div class="tab-header tab-reimburse">
+              <span class="tab-icon">&#128179;</span>
+              <h3>Reimbursements</h3>
+            </div>
+            <div class="tab-body">
+              <p class="tab-purpose">Licensing reimbursements logged throughout the pay period</p>
+              <div class="tab-columns">
+                <span class="col-tag">Provider</span>
+                <span class="col-tag">Type</span>
+                <span class="col-tag">Amount</span>
+                <span class="col-tag">Receipt</span>
+                <span class="col-tag">Added to Gusto</span>
+              </div>
+              <p class="tab-note">Running total at top. Check "Added to Gusto" only after entering in Gusto.</p>
+            </div>
+          </div>
+
+          <div class="sheet-tab">
+            <div class="tab-header tab-diffs">
+              <span class="tab-icon">&#127769;</span>
+              <h3>Shift Diffs</h3>
+            </div>
+            <div class="tab-body">
+              <p class="tab-purpose">Weekend/evening differential captures</p>
+              <div class="tab-columns">
+                <span class="col-tag">Provider</span>
+                <span class="col-tag">Date</span>
+                <span class="col-tag">Shift Type</span>
+                <span class="col-tag">Hours</span>
+                <span class="col-tag">Diff Rate</span>
+                <span class="col-tag">Total</span>
+              </div>
+              <p class="tab-note">Deadline: capture all diffs before payroll processing day. Formula auto-calculates Total.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-amber">
+        <div class="callout-icon">&#128203;</div>
+        <div><strong>How to use:</strong> At the start of each pay period, duplicate the template sheet and rename it with the pay period dates (e.g., "Payroll 03-01 to 03-15"). Work in that sheet throughout the period. Archive completed sheets to a "Completed" folder.</div>
       </div>
     </div>
   </section>
@@ -574,7 +948,7 @@
 
   <!-- === FOOTER === -->
   <footer>
-    <strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v1.0 &middot; March 2026<br>
+    <strong>Fountain Vitality</strong> &middot; Payroll Variance &amp; Processing SOP &middot; v2.0 &middot; March 2026<br>
     Owner: Daniel Raphael, Clinical Operations
   </footer>
 
